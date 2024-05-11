@@ -22,7 +22,7 @@ public class AtividadeCincoMatriz {
 
         //Gera numero entre 2 e 10
         int numMatriz = rand.nextInt((10 - 2) + 1) + 2;
-        System.out.println(numMatriz);
+        
         //Cria matrizes quadradas
         int[][] Matriz1 = gerarMatriz(numMatriz);
         int[][] Matriz2 = gerarMatriz(numMatriz);
@@ -83,7 +83,9 @@ public class AtividadeCincoMatriz {
         for (int x = 0; x < matriz.length; x++) {
             System.out.print("| ");
             for (int y = 0; y < matriz[x].length; y++) {
-                System.out.printf("%-5d", matriz[x][y]);
+                int totalWidth = 10;
+                int padding = (totalWidth - String.valueOf(matriz[x][y]).length()) / 2;
+                System.out.printf("%"+padding/2+"d%"+padding/2+"s", matriz[x][y],"");
             }
             System.out.println("|");
         }
